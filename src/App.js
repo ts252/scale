@@ -39,26 +39,10 @@ export default function App() {
     let reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onloadend = function() {
-      setFileData(reader.result)
-      /* clever but not needed
-      const [prefix, b64] = reader.result.split(",", 2)
-      let svgsrc = atob(b64)
-      let doc = (new DOMParser()).parseFromString(svgsrc, "text/xml")
-      let w = Number.parseInt(doc.querySelector("svg").getAttribute("width"))
-      let h = Number.parseInt(doc.querySelector("svg").getAttribute("height"))
-      if(w < 1000){
-        //doc.querySelector("svg").setAttribute("width", "1000mm")
-        //doc.querySelector("svg").setAttribute("height", Math.round(1000 / w * h) + "mm")
-      }
-      svgsrc = (new XMLSerializer().serializeToString(doc))
-      const dataurl = prefix + "," + btoa(svgsrc)
-*/
-     
+      setFileData(reader.result)           
     }
   }
-
   
-
   return (  
     <div className="App">
       <div className="overlay"><FileUploader handleChange={handleChange} name="file" types={fileTypes} />

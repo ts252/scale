@@ -208,10 +208,6 @@ export default function ScaleDrawing(props){
         }
       }, [fileData])
 
-    /*
-     reader.result */
-
-
      return (
         <Fragment><img ref={i} alt="thumbnail"/>
         <canvas ref={canvref} />     
