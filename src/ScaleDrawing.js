@@ -21,7 +21,7 @@ export default function ScaleDrawing(props){
         for(var snapy = 0; snapy < 40; snapy++){
           for(var snapx = 0; snapx < 40; snapx++){
             const off = (40 * snapy + snapx) * 4
-            if(data[off + 3] != 0 && data[off] != 255){
+            if(data[off + 3] !== 0 && data[off] !== 255){
               const dist = Math.sqrt(Math.pow(snapy - 20, 2) + Math.pow(snapx - 20, 2))
               if(dist < nearestSnapDist){
                 nearestSnapDist = dist

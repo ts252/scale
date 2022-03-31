@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import ScaleDrawing from "./ScaleDrawing";
 
