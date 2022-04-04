@@ -25,4 +25,6 @@ jobs:
     - name: Build
       run: |
         npm install
+        git config user.email "gh-actions@ts252.github.com"
+        git config user.name "Github Actions"
         npm run deploy
