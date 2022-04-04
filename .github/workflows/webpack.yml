@@ -25,6 +25,11 @@ jobs:
     - name: Build
       run: |
         npm install
-        git config user.email "gh-actions@ts252.github.com"
-        git config user.name "Github Actions"
-        npm run deploy
+        npm run build
+    
+    - name: Deploy
+      run: |        
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
