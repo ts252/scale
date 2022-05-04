@@ -1,9 +1,8 @@
 
-import { useState, useRef, useEffect, Fragment } from "react";
+import React, { useState, useRef, useEffect, Fragment } from "react"
+import PropTypes from "prop-types"
 
-
-export default function ScaleDrawing(props){
-    const {fileData, scale, onLineCreated} = props    
+export default function ScaleDrawing({fileData, scale, onLineCreated}){    
     const [lineStart, setLineStart] = useState(null);
     const [lines, setLines] = useState([])
     const canvref = useRef();
@@ -217,3 +216,8 @@ export default function ScaleDrawing(props){
         </Fragment>
      )
 } 
+ScaleDrawing.propTypes = {
+  fileData: PropTypes.obj,
+  scale: PropTypes.num,
+  onLineCreated: PropTypes.func
+}

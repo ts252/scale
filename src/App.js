@@ -1,14 +1,13 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import ScaleDrawing from "./ScaleDrawing";
+import PropTypes from "prop-types"
 
 import './App.css';
 
 const fileTypes = ["JPG", "PNG", "SVG"];
 
-function Scale(props){
-  const {lastLine, scale, onSetScale} = props
-  
+const Scale = ({lastLine, scale, onSetScale}) => {        
   const realdim = useRef()
 
   if(!lastLine){
@@ -27,6 +26,13 @@ function Scale(props){
     </div>
   )
 }
+  
+Scale.propTypes = {
+  lastLine: PropTypes.object.isRequired,
+  scale: PropTypes.number.isRequired,
+  onSetScale: PropTypes.func
+}
+
 
 export default function App() {
   const [file, setFile] = useState(null);
